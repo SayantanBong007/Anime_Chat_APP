@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demon Slayer Chat App</title>
+    <link rel="stylesheet" href="/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.9/lottie.min.js"></script>
+  </head>
+
+  <body>
+    <section class="chat__section">
+      <div class="brand">
+        <img height="70" src="/fsdf.png" alt="" />
+        <h1>Anime_Sphere</h1>
+      </div>
+      <div class="message__area"></div>
+      <!-- Typing indicator with Lottie animation -->
+      <div id="typing-indicator" style="display: none">
+        <!-- Include a container for the animation -->
+        <div id="animation-container" style="width: 100px; height: 100px"></div>
+      </div>
+      <div>
+        <textarea
+          id="textarea"
+          cols="30"
+          rows="1"
+          placeholder="Write a message..."
+        ></textarea>
+      </div>
+    </section>
+
+    <!-- Include Socket.IO client library -->
+    <script src="/socket.io/socket.io.js"></script>
+    <!-- Your client-side JavaScript code -->
+    <script src="client.js"></script>
+
+    <script>
+      // Load and play the Lottie animation
+      var animation = bodymovin.loadAnimation({
+        container: document.getElementById("animation-container"),
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+        path: "./animation.json", // Replace with the path to your animation JSON file
+      });
+    </script>
+  </body>
+</html>
